@@ -3,6 +3,15 @@ import datetime
 
 # Global variables:
 rooms = []
+avail_rooms = []
+phone_numbers = []
+adrs = []
+names = []
+email_adrs = []
+check_ins = []
+check_outs = []
+
+
 
 def management():
     print('\t\t\t\tWELCOME TO KHURANA NIWAS')
@@ -12,7 +21,6 @@ def management():
 
     if var == 1:
         makeBooking()
-        pass
     elif var == 2:
         service()
         pass
@@ -28,20 +36,34 @@ def management():
     else:
         print('Wrong choice.\nTry Again')
         
-    
-
-management()
 
 
 def makeBooking():
-    pass
+    print("\t\t\t\tLet us proceed with Booking\n")
+
+
+    while 1: 
+        name1 = str(input("Please Enter you Name: "))
+        ph1 = str(input("Please enter you Phone Number: "))
+        adr1 = str(input("Please enter your Home Address: "))
+        eadr1 = str(input("Please enter you email address: "))
+    # check if any of the fields is empty:
+        if name1 != '' and ph1 != '' and adr1 != '' and eadr1 != '':
+            phone_numbers.append(ph1)
+            names.append(name1)
+            adrs.append(adr1)
+            email_adrs.append(eadr1)
+            break
+        else:
+            print("Name, Phone Number, Address and Email Address can not be empty!!")
+    
+
+
 
 def service():
     pass
 
 def roomInfo():
-    
-
     pass
 
 def payment():
@@ -49,3 +71,6 @@ def payment():
 
 def records():
     pass
+
+
+management()
